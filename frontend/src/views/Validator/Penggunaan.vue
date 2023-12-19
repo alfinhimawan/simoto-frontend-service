@@ -9,12 +9,13 @@
   </template>
   
   <script>
-  import PenggunaanTable from "./components/PenggunaanTable.vue";
-  
+
+  import PenggunaanTable from './components/PenggunaanTable.vue';
+
   export default {
     name: "penggunaan",
     components: {
-      PenggunaanTable,
+      PenggunaanTable
     },
   };
   </script>

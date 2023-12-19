@@ -2,19 +2,19 @@
     <div class="py-4 container-fluid">
       <div class=" row">
         <div class="col-12">
-          <vehicle-table />
+          <kendaraan-table />
         </div>
       </div>
     </div>
   </template>
   
   <script>
-  import VehicleTable from "./components/VehicleTable.vue";
+  import KendaraanTable from "./components/KendaraanTable.vue";
   
   export default {
-    name: "vehicle",
+    name: "kendaraan",
     components: {
-      VehicleTable,
+      KendaraanTable,
     },
   };
   </script>

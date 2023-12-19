@@ -1,7 +1,29 @@
 <template>
   <div class="card">
     <div class="card-header pb-0">
-      <h6>Vehicle Data</h6>
+      <h6>Daftar Kendaraan Operasional</h6>
+      <div class="d-flex align-items-center">
+        <!-- Search Input -->
+        <div class="col-sm-2 mt-n3">
+          <!-- Coba beberapa nilai untuk mt-n -->
+          <input
+            type="text"
+            style="margin-left: 1px"
+            class="form-control"
+            v-model="searchTerm"
+            placeholder="Search..."
+          />
+        </div>
+        <div class="input-group-append">
+          <button
+            style="margin-left: 8px"
+            class="btn btn-primary align-self-start"
+            @click="search"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="card-body px-0 pt-0 pb-2">
       <div class="table-responsive p-0">
@@ -58,16 +80,11 @@
               <td
                 class="text-center"
                 :style="{
-                  'background-color':
-                    vehicle.status === 'Tidak Dipakai'
-                      ? 'rgba(76, 175, 80, 0.7)'
-                      : 'rgba(255, 0, 0, 0.7)',
+                  'background-color': getColorForStatus(vehicle.status),
                   color: 'white',
-                  padding: '10px 5px',
+                  padding: '8px 12px',
                   'border-radius': '10px',
                   width: '50px',
-                  height: '20px',
-                  'margin-left': '5px', // Sesuaikan dengan jumlah margin yang diinginkan
                 }"
               >
                 {{ vehicle.status }}
@@ -181,6 +198,16 @@ export default {
     prevPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
+      }
+    },
+    getColorForStatus(status) {
+      switch (status) {
+        case "Dipakai":
+          return "rgba(76, 175, 80, 0.7)";
+        case "Tidak Dipakai":
+          return "rgba(255, 0, 0, 0.7)";
+        default:
+          return "rgba(0, 0, 0, 0)";
       }
     },
   },

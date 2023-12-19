@@ -12,7 +12,10 @@
           :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
         >
           <template v-slot:icon>
-            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            <i
+              class="fas fa-house text-primary text-sm opacity-10"
+              style="margin-bottom: 10px"
+            ></i>
           </template>
         </sidenav-item>
 
@@ -25,20 +28,20 @@
           <template v-slot:icon>
             <i
               class="fas fa-user text-info text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
 
         <sidenav-item
-          url="/Admin/vehicle"
-          :class="getRoute() === 'vehicle' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الجداول' : 'Vehicle'"
+          url="/Admin/kendaraan"
+          :class="getRoute() === 'kendaraan' ? 'active' : ''"
+          :navText="this.$store.state.isRTL ? 'الجداول' : 'Kendaraan'"
         >
           <template v-slot:icon>
             <i
               class="fas fa-car text-dark text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -51,7 +54,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-tools text-danger text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -64,7 +67,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-wrench text-warning text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -78,7 +81,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-sign-out-alt text-success text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -92,7 +95,10 @@
           :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
         >
           <template v-slot:icon>
-            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            <i
+              class="fas fa-house text-primary text-sm opacity-10"
+              style="margin-bottom: 10px"
+            ></i>
           </template>
         </sidenav-item>
 
@@ -105,7 +111,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-wrench text-warning text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -120,7 +126,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-sign-out-alt text-success text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -134,19 +140,22 @@
           :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
         >
           <template v-slot:icon>
-            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            <i
+              class="fas fa-house text-primary text-sm opacity-10"
+              style="margin-bottom: 10px"
+            ></i>
           </template>
         </sidenav-item>
 
         <sidenav-item
-          url="/User/vehicle"
-          :class="getRoute() === 'vehicle' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الجداول' : 'Vehicle'"
+          url="/User/kendaraan"
+          :class="getRoute() === 'kendaraan' ? 'active' : ''"
+          :navText="this.$store.state.isRTL ? 'الجداول' : 'kendaranan'"
         >
           <template v-slot:icon>
             <i
               class="fas fa-car text-dark text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -160,7 +169,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-wrench text-warning text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>
@@ -175,7 +184,7 @@
           <template v-slot:icon>
             <i
               class="fas fa-sign-out-alt text-success text-sm opacity-10"
-              style="margin-left: 1px; height: 28px"
+              style="margin-left: 1px; height: 28px; margin-bottom: -5px"
             ></i>
           </template>
         </sidenav-item>

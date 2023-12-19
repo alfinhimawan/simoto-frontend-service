@@ -1,10 +1,36 @@
 <template>
   <div class="card">
     <div class="card-header pb-0">
-      <h6>Vehicle Data</h6>
-      <button type="button" class="btn btn-primary btn-sm" @click="tambahData">
-        Add
-      </button>
+      <h6>Kelola Kendaraan</h6>
+      <div class="d-flex align-items-center">
+        <!-- Search Input -->
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          @click="tambahData"
+        >
+          <i class="fa fa-circle-plus"></i> Tambah Kendaraan
+        </button>
+        <div class="col-sm-2 mt-n3">
+          <!-- Coba beberapa nilai untuk mt-n -->
+          <input
+            type="text"
+            style="margin-left: 5px"
+            class="form-control"
+            v-model="searchTerm"
+            placeholder="Search..."
+          />
+        </div>
+        <div class="input-group-append">
+          <button
+            style="margin-left: 8px"
+            class="btn btn-primary align-self-start"
+            @click="search"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="card-body px-0 pt-0 pb-2">
       <div class="table-responsive p-0">
@@ -66,15 +92,11 @@
               <td
                 class="text-center"
                 :style="{
-                  'background-color':
-                    vehicle.status === 'Dipakai'
-                      ? 'rgba(76, 175, 80, 0.7)'
-                      : 'rgba(255, 0, 0, 0.7)',
+                  'background-color': getColorForStatus(vehicle.status),
                   color: 'white',
-                  padding: '10px 5px',
+                  padding: '8px 12px',
                   'border-radius': '10px',
                   width: '50px',
-                  height: '20px'
                 }"
               >
                 {{ vehicle.status }}
@@ -150,7 +172,7 @@
 
 <script>
 export default {
-  name: "vehicle-tables",
+  name: "kendaraan-tables",
   data() {
     return {
       vehicle: [
@@ -180,7 +202,8 @@ export default {
         },
       ],
       currentPage: 1,
-      itemsPerPage: 5, // Ubah jumlah item per halaman sesuai kebutuhan
+      itemsPerPage: 5,
+      searchTerm: "",
     };
   },
   computed: {
@@ -220,6 +243,17 @@ export default {
       // Fungsi untuk menghapus kendaraan
       console.log("Delete vehicle", index);
     },
+    getColorForStatus(status) {
+      switch (status) {
+        case "Dipakai":
+          return "rgba(76, 175, 80, 0.7)";
+        case "Tidak Dipakai":
+          return "rgba(255, 0, 0, 0.7)";
+        default:
+          return "rgba(0, 0, 0, 0)";
+      }
+    },
+    search() {},
   },
 };
 </script>

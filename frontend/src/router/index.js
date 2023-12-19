@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AdminDashboard from "../views/Admin/DashboardAdmin.vue";
 import User from "../views/Admin/User.vue";
 import Signin from "../views/Login/Signin.vue";
-import Vehicle from "../views/Admin/Vehicle.vue";
+import Kendaraan from "../views/Admin/Kendaraan.vue";
 import Service from "../views/Admin/Service.vue";
 import AdminPenggunaan from "../views/Admin/Penggunaan.vue";
 // VALIDATOR
@@ -28,9 +28,9 @@ const adminRoutes = [
     component: User,
   },
   {
-    path: "/Admin/vehicle",
-    name: "Vehicle",
-    component: Vehicle,
+    path: "/Admin/kendaraan",
+    name: "Kendaraan",
+    component: Kendaraan,
   },
   {
     path: "/Admin/service",

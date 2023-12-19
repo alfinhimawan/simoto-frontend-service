@@ -53,14 +53,21 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="p-3 pb-0 card-header">
-                <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">Welcome to Simoto</h6>
+                <div class="d-flex flex-column align-items-center">
+                  <h6 class="mb-2">Welcome to Simoto Aji As Admin</h6>
+                  <!-- <img
+                    src="https://source.unsplash.com/500x500/?admin"
+                    alt="Admin Image"
+                    class="admin-image"
+                  /> -->
+                  <img src="../../../src/assets/img/image_login.jpg" alt="Admin Image" class="admin-image" />
                 </div>
               </div>
-              <div class="card-body">
+              <div class="card-body text-center">
                 <p class="text-muted">
-                  Thank you for choosing Simoto! We're excited to have you on board.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Thank you for choosing Simoto! We're excited to have you on
+                  board. Lorem ipsum dolor sit amet, consectetur adipiscing
+                  elit.
                 </p>
               </div>
             </div>
@@ -80,43 +87,53 @@ export default {
     return {
       stats: {
         money: {
-          title: "Today's Money",
+          title: "Number of Admins",
           value: "$53,000",
           percentage: "+55%",
-          iconClass: "ni ni-money-coins",
+          iconClass: "fas fa-user-tie", 
           detail: "since yesterday",
           iconBackground: "bg-gradient-primary",
         },
         users: {
-          title: "Today's Users",
+          title: "Number of Validators",
           value: "2,300",
           percentage: "+3%",
-          iconClass: "ni ni-world",
+          iconClass: "fas fa-user-check",
           iconBackground: "bg-gradient-danger",
           detail: "since last week",
         },
         clients: {
-          title: "New Clients",
+          title: "Number of Users",
           value: "+3,462",
           percentage: "-2%",
-          iconClass: "ni ni-paper-diploma",
+          iconClass: "fas fa-user", 
           percentageColor: "text-danger",
           iconBackground: "bg-gradient-success",
           detail: "since last quarter",
         },
         sales: {
-          title: "Sales",
+          title: "Loan Amount",
           value: "$103,430",
           percentage: "+5%",
-          iconClass: "ni ni-cart",
+          iconClass: "fas fa-car", 
           iconBackground: "bg-gradient-warning",
           detail: "than last month",
         },
       },
     };
   },
+
   components: {
     Card,
   },
 };
 </script>
+
+<style scoped>
+.admin-image {
+  width: 40%;
+  height: auto; 
+  margin-top: 10px; 
+  border-radius: 10%;
+}
+</style>

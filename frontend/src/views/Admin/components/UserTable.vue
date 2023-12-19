@@ -1,13 +1,41 @@
+<!-- UserTable.vue -->
+
 <template>
   <div class="card">
-    <div class="card-header pb-0">
-      <h6>Users Data</h6>
-      <button type="button" class="btn btn-primary btn-sm" @click="tambahData">
-        Add
-      </button>
+    <div class="card-header pb-0 mb-2">
+      <h6>Kelola User</h6>
+      <div class="d-flex align-items-center">
+        <!-- Search Input -->
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          @click="tambahData"
+        >
+          <i class="fa fa-circle-plus"></i> Tambah User
+        </button>
+        <div class="col-sm-2 mt-n3">
+          <input
+            type="text"
+            style="margin-left: 5px"
+            class="form-control"
+            v-model="searchTerm"
+            placeholder="Search..."
+          />
+        </div>
+        <div class="input-group-append">
+          <button
+            style="margin-left: 8px"
+            class="btn btn-primary align-self-start"
+            @click="search"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="card-body px-0 pt-0 pb-2">
       <div class="table-responsive p-0">
+        <!-- Tabel User -->
         <table class="table datatable">
           <thead>
             <tr>
@@ -70,6 +98,7 @@
             </tr>
           </tbody>
         </table>
+        <!-- Navigasi Halaman -->
         <nav
           aria-label="Page navigation example"
           style="margin-left: 20px; margin-right: 20px"
@@ -95,7 +124,7 @@
                 class="page-link"
                 href="javascript:;"
                 @click="changePage(page)"
-                >{{ page }}</a
+              >{{ page }}</a
               >
             </li>
             <li
@@ -119,6 +148,7 @@
 </template>
 
 <script>
+
 export default {
   name: "user-tables",
   data() {
@@ -130,36 +160,7 @@ export default {
           role: "Manager",
           email: "john@creative-tim.com",
         },
-        {
-          department: "Pengembangan",
-          name: "Alexa Liras",
-          role: "Programator",
-          email: "alexa@creative-tim.com",
-        },
-        {
-          department: "Eksekutif",
-          name: "Laurent Perrier",
-          role: "Eksekutif",
-          email: "laurent@creative-tim.com",
-        },
-        {
-          department: "Pengembangan",
-          name: "Michael Levi",
-          role: "Programator",
-          email: "michael@creative-tim.com",
-        },
-        {
-          department: "Manajemen",
-          name: "Richard Gran",
-          role: "Manager",
-          email: "richard@creative-tim.com",
-        },
-        {
-          department: "Pengembangan",
-          name: "Miriam Eric",
-          role: "Programtor",
-          email: "miriam@creative-tim.com",
-        },
+        // ... (data lainnya)
       ],
       currentPage: 1,
       itemsPerPage: 5,
@@ -175,12 +176,10 @@ export default {
       const end = start + this.itemsPerPage;
       const currentPageItems = this.user.slice(start, end);
 
-      // Hitung nomor urut untuk item pada halaman saat ini
       const currentPageItemNumbers = currentPageItems.map(
         (item, index) => start + index + 1
       );
 
-      // Gabungkan nomor urut dengan data user
       return currentPageItems.map((item, index) => ({
         ...item,
         number: currentPageItemNumbers[index],
@@ -189,15 +188,12 @@ export default {
   },
   methods: {
     tambahData() {
-      // Fungsi untuk menangani tombol "Tambah Data"
-      console.log("Tambah data");
+      this.$refs.addUserModal.showModal();
     },
     editUser(index) {
-      // Fungsi untuk mengedit pengguna
       console.log("Edit user", index);
     },
     deleteUser(index) {
-      // Fungsi untuk menghapus pengguna
       console.log("Delete user", index);
     },
     changePage(page) {
@@ -212,6 +208,9 @@ export default {
       if (this.currentPage < this.totalPage) {
         this.currentPage++;
       }
+    },
+    search() {
+      // Logika pencarian
     },
   },
 };
