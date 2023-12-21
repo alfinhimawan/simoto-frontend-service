@@ -14,7 +14,7 @@ import ErrorPage from "@/components/ErrorPage.vue";
 // USER
 import UserDashboard from "../views/User/DashboardUser.vue";
 import UserPenggunaan from "../views/User/Penggunaan.vue";
-import UserVehicle from "../views/User/Vehicle.vue"
+import UserKendaraan from "../views/User/Kendaraan.vue"
 
 const adminRoutes = [
   {
@@ -68,9 +68,9 @@ const userRoutes = [
     component: UserPenggunaan,
   },
   {
-    path: "/User/vehicle",
-    name: "VehicleUser",
-    component: UserVehicle,
+    path: "/User/kendaraan",
+    name: "KendaraanUser",
+    component: UserKendaraan,
   },
 ];
 

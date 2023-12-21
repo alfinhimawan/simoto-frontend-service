@@ -1,5 +1,4 @@
 <!-- UserTable.vue -->
-
 <template>
   <div class="card">
     <div class="card-header pb-0 mb-2">
@@ -124,7 +123,7 @@
                 class="page-link"
                 href="javascript:;"
                 @click="changePage(page)"
-              >{{ page }}</a
+                >{{ page }}</a
               >
             </li>
             <li
@@ -148,7 +147,6 @@
 </template>
 
 <script>
-
 export default {
   name: "user-tables",
   data() {

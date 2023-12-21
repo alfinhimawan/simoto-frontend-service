@@ -142,7 +142,7 @@
 
 <script>
 export default {
-  name: "vehicle-tables",
+  name: "kendaraan-tables",
   data() {
     return {
       vehicle: [

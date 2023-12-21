@@ -62,6 +62,56 @@
               >
                 Tujuan
               </th>
+              <!-- <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Km Awal
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Km Akhir
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Bensin Awal
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Bensin Akhir
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Tanggal Berangkat
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Jam Berangkat
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Tanggal Kembali
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Jam Kembali
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Kondisi
+              </th>
+              <th
+                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+              >
+                Keterangan
+              </th> -->
               <th
                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
               >
@@ -81,6 +131,16 @@
               <td class="text-center">{{ penggunaan.id_user }}</td>
               <td class="text-center">{{ penggunaan.nama_pengguna }}</td>
               <td class="text-center">{{ penggunaan.tujuan }}</td>
+              <!-- <td class="text-center">{{ penggunaan.km_awal }}</td>
+              <td class="text-center">{{ penggunaan.km_akhir }}</td>
+              <td class="text-center">{{ penggunaan.bensin_awal }}</td>
+              <td class="text-center">{{ penggunaan.bensin_akhir }}</td>
+              <td class="text-center">{{ penggunaan.tgl_berangkat }}</td>
+              <td class="text-center">{{ penggunaan.jam_berangkat }}</td>
+              <td class="text-center">{{ penggunaan.tgl_kembali }}</td>
+              <td class="text-center">{{ penggunaan.jam_kembali }}</td>
+              <td class="text-center">{{ penggunaan.kondisi }}</td>
+              <td class="text-center">{{ penggunaan.keterangan }}</td> -->
               <td
                 class="text-center"
                 :style="{

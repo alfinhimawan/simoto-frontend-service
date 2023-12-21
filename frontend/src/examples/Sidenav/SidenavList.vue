@@ -150,7 +150,7 @@
         <sidenav-item
           url="/User/kendaraan"
           :class="getRoute() === 'kendaraan' ? 'active' : ''"
-          :navText="this.$store.state.isRTL ? 'الجداول' : 'kendaranan'"
+          :navText="this.$store.state.isRTL ? 'الجداول' : 'Kendaranan'"
         >
           <template v-slot:icon>
             <i

@@ -150,11 +150,43 @@
                   placeholder="Email"
                   aria-label="Email"
                 />
-                <argon-input
-                  type="password"
-                  placeholder="Password"
-                  aria-label="Password"
-                />
+                <!-- ... -->
+                <div style="position: relative">
+                  <argon-input
+                    type="password"
+                    placeholder="Password"
+                    aria-label="Password"
+                    ref="passwordInput"
+                  />
+                  <div
+                    v-show="showPassword"
+                    class="eye-icon"
+                    @click="togglePasswordVisibility"
+                    style="
+                      position: absolute;
+                      top: 50%;
+                      right: 10px;
+                      transform: translateY(-50%);
+                      cursor: pointer;
+                    "
+                  >
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <div
+                    v-show="!showPassword"
+                    class="eye-icon"
+                    @click="togglePasswordVisibility"
+                    style="
+                      position: absolute;
+                      top: 50%;
+                      right: 10px;
+                      transform: translateY(-50%);
+                      cursor: pointer;
+                    "
+                  >
+                    <i class="fas fa-eye-slash"></i>
+                  </div>
+                </div>
                 <argon-checkbox checked>
                   <label class="form-check-label" for="flexCheckDefault">
                     I agree the
@@ -166,7 +198,7 @@
                 <div class="text-center">
                   <argon-button
                     fullWidth
-                    color="dark"
+                    color="primary"
                     variant="gradient"
                     class="my-4 mb-2"
                     >Sign in</argon-button
@@ -181,7 +213,6 @@
   </main>
   <app-footer />
 </template>
-
 <script>
 import AppFooter from "@/examples/PageLayout/Footer.vue";
 import ArgonInput from "@/components/ArgonInput.vue";
@@ -190,6 +221,11 @@ import ArgonButton from "@/components/ArgonButton.vue";
 const body = document.getElementsByTagName("body")[0];
 
 export default {
+  data() {
+    return {
+      showPassword: false,
+    };
+  },
   name: "signin",
   components: {
     AppFooter,
@@ -210,6 +246,14 @@ export default {
     this.$store.state.showSidenav = true;
     this.$store.state.showFooter = true;
     body.classList.add("bg-gray-100");
+  },
+  methods: {
+    togglePasswordVisibility() {
+      this.showPassword = !this.showPassword;
+      const inputType = this.showPassword ? 'text' : 'password';
+      const passwordInput = this.$refs.passwordInput.$el.querySelector('input');
+      passwordInput.type = inputType;
+    },
   },
 };
 </script>
