@@ -3,14 +3,10 @@
     <div class="card-header pb-0">
       <h6>Kelola Kendaraan</h6>
       <div class="d-flex align-items-center">
-        <!-- Search Input -->
-        <button
-          type="button"
-          class="btn btn-primary btn-sm"
-          @click="tambahData"
-        >
-          <i class="fa fa-circle-plus"></i> Tambah Kendaraan
+        <button type="button" class="btn btn-primary btn-sm" @click="openModal">
+          <i class="fa fa-circle-plus"></i> Tambah
         </button>
+        <!-- Search Input -->
         <div class="col-sm-2 mt-n3">
           <!-- Coba beberapa nilai untuk mt-n -->
           <input
@@ -80,41 +76,41 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(vehicle, index) in paginatedVehicle" :key="index">
+            <tr v-for="(kendaraan, index) in paginatedKendaraan" :key="index">
               <td class="text-center">
                 {{ (currentPage - 1) * itemsPerPage + index + 1 }}
               </td>
-              <td class="text-center">{{ vehicle.nopol }}</td>
-              <td class="text-center">{{ vehicle.alias_name }}</td>
-              <td class="text-center">{{ vehicle.merk }}</td>
-              <td class="text-center">{{ vehicle.jenis }}</td>
-              <td class="text-center">{{ vehicle.tanggal_pajak }}</td>
+              <td class="text-center">{{ kendaraan.nopol }}</td>
+              <td class="text-center">{{ kendaraan.alias_name }}</td>
+              <td class="text-center">{{ kendaraan.merk }}</td>
+              <td class="text-center">{{ kendaraan.jenis }}</td>
+              <td class="text-center">{{ kendaraan.tanggal_pajak }}</td>
               <td
                 class="text-center"
                 :style="{
-                  'background-color': getColorForStatus(vehicle.status),
+                  'background-color': getColorForStatus(kendaraan.status),
                   color: 'white',
                   padding: '8px 12px',
                   'border-radius': '10px',
                   width: '50px',
                 }"
               >
-                {{ vehicle.status }}
+                {{ kendaraan.status }}
               </td>
 
               <td class="text-center">
                 <a
                   href="javascript:;"
                   class="text-secondary font-weight-bold text-xs"
-                  @click="editVehicle(index)"
+                  @click="editKendaraan(index)"
                 >
-                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-pen-to-square"></i>
                 </a>
                 <span class="text-secondary font-weight-bold text-xs"> / </span>
                 <a
                   href="javascript:;"
                   class="text-danger font-weight-bold text-xs"
-                  @click="deleteVehicle(index)"
+                  @click="deleteKendaraan(index)"
                 >
                   <i class="fas fa-trash"></i>
                 </a>
@@ -175,7 +171,7 @@ export default {
   name: "kendaraan-tables",
   data() {
     return {
-      vehicle: [
+      kendaraan: [
         {
           nopol: "AB-2370-JD",
           alias_name: "Unit 1",
@@ -208,12 +204,12 @@ export default {
   },
   computed: {
     totalPage() {
-      return Math.ceil(this.vehicle.length / this.itemsPerPage);
+      return Math.ceil(this.kendaraan.length / this.itemsPerPage);
     },
-    paginatedVehicle() {
+    paginatedKendaraan() {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
-      return this.vehicle.slice(startIndex, endIndex);
+      return this.kendaraan.slice(startIndex, endIndex);
     },
   },
   methods: {
@@ -235,13 +231,13 @@ export default {
       // Fungsi untuk menangani tombol "Tambah Data"
       console.log("Tambah data");
     },
-    editVehicle(index) {
+    editKendaraan(index) {
       // Fungsi untuk mengedit kendaraan
-      console.log("Edit vehicle", index);
+      console.log("Edit kendaraan", index);
     },
-    deleteVehicle(index) {
+    deleteKendaraan(index) {
       // Fungsi untuk menghapus kendaraan
-      console.log("Delete vehicle", index);
+      console.log("Delete kendaraan", index);
     },
     getColorForStatus(status) {
       switch (status) {

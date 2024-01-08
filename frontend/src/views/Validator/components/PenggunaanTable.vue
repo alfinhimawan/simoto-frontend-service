@@ -97,9 +97,17 @@
                 <a
                   href="javascript:;"
                   class="text-secondary font-weight-bold text-xs"
+                  @click="detailPenggunaan(index)"
+                >
+                  <i class="fas fa-circle-info"></i>
+                </a>
+                <span class="text-secondary font-weight-bold text-xs"> / </span>
+                <a
+                  href="javascript:;"
+                  class="text-secondary font-weight-bold text-xs"
                   @click="editPenggunaan(index)"
                 >
-                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-pen-to-square"></i>
                 </a>
                 <span class="text-secondary font-weight-bold text-xs"> / </span>
                 <a

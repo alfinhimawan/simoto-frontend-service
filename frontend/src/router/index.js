@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-// ADMIN
+// Admin
 import AdminDashboard from "../views/Admin/DashboardAdmin.vue";
 import User from "../views/Admin/User.vue";
 import Signin from "../views/Login/Signin.vue";
 import Kendaraan from "../views/Admin/Kendaraan.vue";
 import Service from "../views/Admin/Service.vue";
 import AdminPenggunaan from "../views/Admin/Penggunaan.vue";
-// VALIDATOR
+// Validator
 import ValidatorDashboard from "../views/Validator/DashboardValidator.vue";
 import ValidatorPenggunaan from "../views/Validator/Penggunaan.vue";
 // ERROR
 import ErrorPage from "@/components/ErrorPage.vue";
-// USER
+// User
 import UserDashboard from "../views/User/DashboardUser.vue";
 import UserPenggunaan from "../views/User/Penggunaan.vue";
 import UserKendaraan from "../views/User/Kendaraan.vue"

@@ -8,11 +8,10 @@
           class="btn btn-primary btn-sm"
           @click="tambahData"
         >
-          <i class="fa fa-circle-plus"></i> Tambah Penggunaan
+          <i class="fa fa-circle-plus"></i> Tambah
         </button>
         <!-- Search Input -->
         <div class="col-sm-2 mt-n3">
-          <!-- Coba beberapa nilai untuk mt-n -->
           <input
             type="text"
             style="margin-left: 5px"
@@ -157,9 +156,17 @@
                 <a
                   href="javascript:;"
                   class="text-secondary font-weight-bold text-xs"
+                  @click="detailPenggunaan(index)"
+                >
+                  <i class="fas fa-circle-info"></i>
+                </a>
+                <span class="text-secondary font-weight-bold text-xs"> / </span>
+                <a
+                  href="javascript:;"
+                  class="text-secondary font-weight-bold text-xs"
                   @click="editPenggunaan(index)"
                 >
-                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-pen-to-square"></i>
                 </a>
                 <span class="text-secondary font-weight-bold text-xs"> / </span>
                 <a

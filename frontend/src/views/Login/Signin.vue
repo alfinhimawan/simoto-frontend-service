@@ -197,12 +197,14 @@
                 </argon-checkbox>
                 <div class="text-center">
                   <argon-button
+                    @click="signIn"
                     fullWidth
                     color="primary"
                     variant="gradient"
                     class="my-4 mb-2"
-                    >Sign in</argon-button
                   >
+                    Sign in
+                  </argon-button>
                 </div>
               </form>
             </div>
@@ -250,9 +252,12 @@ export default {
   methods: {
     togglePasswordVisibility() {
       this.showPassword = !this.showPassword;
-      const inputType = this.showPassword ? 'text' : 'password';
-      const passwordInput = this.$refs.passwordInput.$el.querySelector('input');
+      const inputType = this.showPassword ? "text" : "password";
+      const passwordInput = this.$refs.passwordInput.$el.querySelector("input");
       passwordInput.type = inputType;
+    },
+    signIn() {
+      this.$router.push("/Admin/dashboard-admin-default");
     },
   },
 };

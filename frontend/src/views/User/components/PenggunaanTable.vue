@@ -67,11 +67,11 @@
               >
                 Status
               </th>
-              <!-- <th
+              <th
                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
               >
                 Action
-              </th> -->
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -92,6 +92,15 @@
                 }"
               >
                 {{ penggunaan.status }}
+              </td>
+              <td class="text-center">
+                <a
+                  href="javascript:;"
+                  class="text-secondary font-weight-bold text-xs"
+                  @click="detailPenggunaan(index)"
+                >
+                  <i class="fas fa-circle-info"></i>
+                </a>
               </td>
             </tr>
           </tbody>

@@ -8,7 +8,7 @@
           class="btn btn-primary btn-sm"
           @click="tambahData"
         >
-          <i class="fa fa-circle-plus"></i> Tambah Riwayat
+          <i class="fa fa-circle-plus"></i> Tambah
         </button>
         <!-- Search Input -->
         <div class="col-sm-2 mt-n3">
@@ -96,7 +96,7 @@
                   class="text-secondary font-weight-bold text-xs"
                   @click="editService(index)"
                 >
-                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-pen-to-square"></i>
                 </a>
                 <span class="text-secondary font-weight-bold text-xs"> / </span>
                 <a

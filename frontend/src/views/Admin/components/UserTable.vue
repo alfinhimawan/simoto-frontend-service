@@ -10,7 +10,7 @@
           class="btn btn-primary btn-sm"
           @click="tambahData"
         >
-          <i class="fa fa-circle-plus"></i> Tambah User
+          <i class="fa fa-circle-plus"></i> Tambah
         </button>
         <div class="col-sm-2 mt-n3">
           <input
@@ -83,7 +83,7 @@
                   class="text-secondary font-weight-bold text-xs"
                   @click="editUser(index)"
                 >
-                  <i class="fas fa-edit"></i>
+                  <i class="fas fa-pen-to-square"></i>
                 </a>
                 <span class="text-secondary font-weight-bold text-xs"> / </span>
                 <a
@@ -158,7 +158,6 @@ export default {
           role: "Manager",
           email: "john@creative-tim.com",
         },
-        // ... (data lainnya)
       ],
       currentPage: 1,
       itemsPerPage: 5,
@@ -186,7 +185,7 @@ export default {
   },
   methods: {
     tambahData() {
-      this.$refs.addUserModal.showModal();
+      this.$refs.addUserModal.show();
     },
     editUser(index) {
       console.log("Edit user", index);
@@ -207,9 +206,7 @@ export default {
         this.currentPage++;
       }
     },
-    search() {
-      // Logika pencarian
-    },
+    search() {},
   },
 };
 </script>
