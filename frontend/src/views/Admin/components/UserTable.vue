@@ -4,7 +4,7 @@
     <div class="card-header pb-0 mb-2">
       <h6>Kelola User</h6>
       <div class="d-flex align-items-center">
-        <!-- Search Input -->
+        <!-- Tambah Button -->
         <button
           type="button"
           class="btn btn-primary btn-sm"
@@ -12,7 +12,10 @@
         >
           <i class="fa fa-circle-plus"></i> Tambah
         </button>
-        <div class="col-sm-2 mt-n3">
+
+        <!-- Pencarian Input -->
+        <div class="ml-auto col-sm-2 mt-n3">
+          <!-- Menggunakan ml-auto untuk memindahkan ke kanan -->
           <input
             type="text"
             style="margin-left: 5px"
@@ -21,6 +24,8 @@
             placeholder="Search..."
           />
         </div>
+
+        <!-- Tombol Pencarian -->
         <div class="input-group-append">
           <button
             style="margin-left: 8px"
@@ -147,6 +152,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 export default {
   name: "user-tables",
   data() {
@@ -191,7 +197,24 @@ export default {
       console.log("Edit user", index);
     },
     deleteUser(index) {
-      console.log("Delete user", index);
+      Swal.fire({
+        title: 'Hapus Data?',
+        text: 'Data Yang Sudah Dihapus Tidak Dapat Dikembalikan Lagi!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: 'red',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal',
+      }).then(result => {
+        if (result.isConfirmed) {
+          // Hapus data atau lakukan operasi lain yang diperlukan di sini
+          console.log("Deleting user at index:", index);
+
+          // Tampilkan SweetAlert setelah berhasil menghapus
+          Swal.fire('Dihapus!', 'Data telah dihapus.', 'success');
+        }
+      });
     },
     changePage(page) {
       this.currentPage = page;

@@ -10,7 +10,7 @@ import AdminPenggunaan from "../views/Admin/Penggunaan.vue";
 import ValidatorDashboard from "../views/Validator/DashboardValidator.vue";
 import ValidatorPenggunaan from "../views/Validator/Penggunaan.vue";
 // ERROR
-import ErrorPage from "@/components/ErrorPage.vue";
+// import ErrorPage from "@/components/ErrorPage.vue";
 // User
 import UserDashboard from "../views/User/DashboardUser.vue";
 import UserPenggunaan from "../views/User/Penggunaan.vue";
@@ -85,11 +85,11 @@ const routes = [
     name: "Signin",
     component: Signin,
   },
-  {
-    path: "/:catchAll(.*)", // Menangkap semua rute yang tidak cocok
-    name: "ErrorPage",
-    component: ErrorPage,
-  },
+  // {
+  //   path: "/:catchAll(.*)", // Menangkap semua rute yang tidak cocok
+  //   name: "ErrorPage",
+  //   component: ErrorPage,
+  // },
   ...adminRoutes,
   ...validatorRoutes,
   ...userRoutes,

@@ -229,6 +229,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 export default {
   name: "penggunaan-tables",
   data() {
@@ -244,7 +245,7 @@ export default {
       ],
       currentPage: 1,
       itemsPerPage: 5,
-      searchTerm: ""
+      searchTerm: "",
     };
   },
   computed: {
@@ -280,7 +281,24 @@ export default {
       console.log("Edit penggunaan", index);
     },
     deletePenggunaan(index) {
-      console.log("Delete penggunaan", index);
+      Swal.fire({
+        title: "Hapus Data?",
+        text: "Data Yang Sudah Dihapus Tidak Dapat Dikembalikan Lagi!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "red",
+        confirmButtonText: "Ya, hapus!",
+        cancelButtonText: "Batal",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Hapus data atau lakukan operasi lain yang diperlukan di sini
+          console.log("Deleting user at index:", index);
+
+          // Tampilkan SweetAlert setelah berhasil menghapus
+          Swal.fire("Dihapus!", "Data telah dihapus.", "success");
+        }
+      });
     },
     getColorForStatus(status) {
       switch (status) {

@@ -159,6 +159,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 export default {
   name: "service-tables",
   data() {
@@ -220,8 +221,24 @@ export default {
       console.log("Edit service", index);
     },
     deleteService(index) {
-      // Fungsi untuk menghapus service
-      console.log("Delete service", index);
+      Swal.fire({
+        title: 'Hapus Data?',
+        text: 'Data Yang Sudah Dihapus Tidak Dapat Dikembalikan Lagi!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: 'red',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal',
+      }).then(result => {
+        if (result.isConfirmed) {
+          // Hapus data atau lakukan operasi lain yang diperlukan di sini
+          console.log("Deleting user at index:", index);
+
+          // Tampilkan SweetAlert setelah berhasil menghapus
+          Swal.fire('Dihapus!', 'Data telah dihapus.', 'success');
+        }
+      });
     },
     search() {},
   },
